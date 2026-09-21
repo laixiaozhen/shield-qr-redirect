@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIELD项目疫苗AI助手跳转</title>
+</head>
+<body>
+<p>正在跳转家庭疫苗AI咨询助手……</p>
+<script>
+//读取中转网页URL问号后的hid（服务器可以捕获这个参数）
+const params = new URLSearchParams(window.location.search);
+const hid = params.get("hid") || "unknown";
+//你的元器webim完整基础链接
+const baseMetaUrl = "https://yuanqi.tencent.com/webim/#/chat/CoRal?appid=2101855446725472512&experience=true";
+//拼接，把hid放到#后面
+const targetUrl = baseMetaUrl + "&household_id=" + hid;
+//自动跳转元器AI页面
+window.location.href = targetUrl;
+</script>
+</body>
+</html>
